@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.GetMapping;
  * @project eRegistrar
  */
 @Controller
-public class HomeController {
-    @GetMapping("/")
-    public String showHomePage() {
-        return "home/index.html";
+public class StudentController {
+    @GetMapping("/students")
+    public String getHomePage() {
+        return "student/index.html";
     }
 }

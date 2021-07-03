@@ -13,4 +13,9 @@ public class StudentController {
     public String getHomePage() {
         return "student/index.html";
     }
+
+    @GetMapping("/students/create")
+    public String getCreateStudentPage() {
+        return "student/create.html";
+    }
 }

@@ -57,12 +57,12 @@ public class StudentController {
 
     @GetMapping(value = "/students/edit/{studentId}")
     public String getEditStudent(@PathVariable Long studentId, Model model) {
-        if (studentId != null) {
+        if (studentId == null) {
             return "student/index";
         }
-        Optional<Student> student = studentService.getStudentById(studentId);
-        if (student.isPresent()) {
-            model.addAttribute("student", student.get());
+        Student student = studentService.getStudentById(studentId);
+        if (student != null) {
+            model.addAttribute("student", student);
             return "student/edit";
         }
         return "student/index";

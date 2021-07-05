@@ -42,6 +42,6 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public List<Student> findStudentsByStudentNumber(String studentNumber) {
-        return null;
+        return studentRepository.findByStudentNumberLike(studentNumber);
     }
 }

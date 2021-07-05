@@ -35,6 +35,16 @@ public class StudentController {
         return mav;
     }
 
+    @PostMapping(value = "/students/find")
+    public ModelAndView getSearchPage(@Valid @ModelAttribute("keyword") String keyword,
+                                      BindingResult bindingResult, Model model) {
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("student/index");
+        List<Student> students = studentService.findStudentsByStudentNumber(keyword);
+        mav.addObject("students", students);
+        return mav;
+    }
+
     @GetMapping(value = "/students/create")
     public String getCreateStudentPage(Model model) {
         model.addAttribute("student", new Student());

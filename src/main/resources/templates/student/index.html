@@ -40,6 +40,12 @@
         <div class="d-flex flex-row">
             <h2>Student list</h2>
         </div>
+        <form method="post" action="/students/find/">
+            <div class="input-group rounded">
+                <input type="search" name="keyword" id="keyword" class="form-control rounded" placeholder="Search by student number" aria-label="Search"
+                       aria-describedby="search-addon" />
+            </div>
+        </form>
         <table class="table">
             <thead>
             <tr>

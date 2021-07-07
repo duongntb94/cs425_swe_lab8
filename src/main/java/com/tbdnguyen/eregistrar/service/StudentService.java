@@ -13,5 +13,5 @@ public interface StudentService {
     Student saveStudent(Student student);
     void deleteStudent(Long studentId);
     Student getStudentById(Long studentId);
-    List<Student> findStudentsByStudentNumber(String studentNumber);
+    List<Student> findStudents(String keyword);
 }

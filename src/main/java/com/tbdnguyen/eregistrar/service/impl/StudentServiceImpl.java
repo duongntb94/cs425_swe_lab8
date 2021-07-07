@@ -41,7 +41,7 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public List<Student> findStudentsByStudentNumber(String studentNumber) {
-        return studentRepository.findByStudentNumberLike(studentNumber);
+    public List<Student> findStudents(String keyword) {
+        return studentRepository.findAllByStudentNumberContainingOrFirstNameContainingOrMiddleNameContainingOrLastNameContainingOrderByFirstName(keyword, keyword, keyword, keyword);
     }
 }

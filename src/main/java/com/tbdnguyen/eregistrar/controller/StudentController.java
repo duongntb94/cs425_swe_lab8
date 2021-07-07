@@ -40,8 +40,9 @@ public class StudentController {
                                       BindingResult bindingResult, Model model) {
         ModelAndView mav = new ModelAndView();
         mav.setViewName("student/index");
-        List<Student> students = studentService.findStudentsByStudentNumber(keyword);
+        List<Student> students = studentService.findStudents(keyword);
         mav.addObject("students", students);
+        mav.addObject("keyword", keyword);
         return mav;
     }
 

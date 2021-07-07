@@ -12,5 +12,6 @@ import java.util.*;
  */
 @Repository
 public interface StudentRepository extends JpaRepository<Student, Long> {
-    List<Student> findByStudentNumberLike(String keyword);
+    List<Student> findAllByStudentNumberContainingOrFirstNameContainingOrMiddleNameContainingOrLastNameContainingOrderByFirstName(String studentNumber, String firstName, String middleName, String lastName);
+
 }
